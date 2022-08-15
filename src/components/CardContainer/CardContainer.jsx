@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import { Link, useParams } from 'react-router-dom'
-import { getDocs, getFirestore, query, where, collection } from 'firebase/firestore';
+import { Link } from 'react-router-dom'
+import { getDocs, getFirestore, collection, query, orderBy} from 'firebase/firestore';
 import Card from '../Card/Card';
 import './CardContainer.css'
 
@@ -8,34 +8,41 @@ import './CardContainer.css'
 const CardContainer = () => {
 
     const [ data, setData ] = useState([])
-    const { categoryId } = useParams()  
+    const [ order, setOrder] = useState(1)
+
+
+    const orderByHandler = (ev) => {
+        setOrder(Number(ev.target.value))
+    }
 
     useEffect (() => {
         const db = getFirestore()
         const queryCollection = collection(db, 'items');
        
-           if (categoryId) {
-       
-               const queryCategoryId = query(queryCollection, where("category", "==", categoryId))
-               getDocs(queryCategoryId)
-               .then(resp => setData(resp.docs.map(item => ({id: item.id, ...item.data() }))))
-               
-           }
-           else{
-               
-               getDocs(queryCollection)
-               .then(resp => setData(resp.docs.map(item => ({id: item.id, ...item.data() })))) 
-           }
-       
-           }, [categoryId])
+        if(order === 1){          
 
+            getDocs(query(queryCollection, orderBy('price', 'desc')))                
+           .then(resp => setData(resp.docs.map(item => ({id: item.id, ...item.data() }))))             
+        }
+        else{
+            getDocs(query(queryCollection, orderBy('price', 'asc')))                
+            .then(resp => setData(resp.docs.map(item => ({id: item.id, ...item.data() }))))
+        }
+        
+           }, [order])
+
+           console.log(data)
 
     return (
         <>
+            <select onChange={orderByHandler}>
+                <option value={1}>Mayor Precio</option>
+                <option value={2}>Menor Precio</option>
+            </select>
 
             {
             data.map(element => 
-            <Link to={`/product/${element.id}`}> 
+            <Link to={`/${element.id}`}> x
                 <Card className='container-cards' key={element.id} data={element} />
             </Link>)
             }
@@ -45,3 +52,5 @@ const CardContainer = () => {
 }
 
 export default CardContainer;
+
+

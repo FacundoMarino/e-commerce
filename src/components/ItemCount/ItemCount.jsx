@@ -11,6 +11,7 @@ const ItemCount = () => {
             <Button color='red' click={() =>setCount( count + 1 )} text='+' />
             <p> {count} </p>
             <Button color='green' click={() =>setCount( count - 1 )} text='-' />
+            <Button color='blue' text='Agregar al Carrito' />
 
         </div>
     );
