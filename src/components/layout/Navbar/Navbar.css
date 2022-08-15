@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    padding-right: 3em;
+    list-style-type: none;
+
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #D8EDF2;
+    font-size: 1.5rem;
+}
