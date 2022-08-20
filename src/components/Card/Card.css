@@ -27,3 +27,11 @@
     gap: 10px;
     padding: 2rem;
 }
+
+.offer{
+    color: blue;
+}
+
+.noOffer{
+    color: yellow;
+}

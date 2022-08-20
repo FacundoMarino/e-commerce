@@ -7,9 +7,3 @@ export const getAllProducts = () => {
        return dbProducts     
 
 }
-
-export const getProductsById = () => {
-
-
-}
-

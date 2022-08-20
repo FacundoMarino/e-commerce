@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+    import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom'
 import { getDocs, getFirestore, collection, query, orderBy} from 'firebase/firestore';
 import Card from '../Card/Card';
@@ -42,7 +42,7 @@ const CardContainer = () => {
 
             {
             data.map(element => 
-            <Link to={`/${element.id}`}> x
+            <Link to={`/${element.id}`}>
                 <Card className='container-cards' key={element.id} data={element} />
             </Link>)
             }
@@ -52,5 +52,3 @@ const CardContainer = () => {
 }
 
 export default CardContainer;
-
-
