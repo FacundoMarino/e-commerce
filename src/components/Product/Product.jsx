@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDataContext } from '../../context/DataProvider/DataProvider';
 import ItemCount from '../ItemCount/ItemCount'
+import  Swal from 'sweetalert2'
 
 const Product = ({ data }) => {
 
@@ -9,6 +10,11 @@ const Product = ({ data }) => {
     const add = (quantity) => {
         addCart(data, quantity)
         data.stock -= quantity
+        Swal.fire(
+             '¡Agregaste el producto al carrito!',
+             '',
+             'success'
+          )
     }
 
 

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Button from '../Button/Button';
+import './ItemCount.css'
 
 const ItemCount = ({ click }) => {
 
@@ -11,7 +12,8 @@ const ItemCount = ({ click }) => {
         
    
     return (
-        <div className='item-count'>
+
+        <div className='container-item'>
 
             <Button color='red' click={() => countHandler(true)} text='+' />
             <p> {count} </p>

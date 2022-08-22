@@ -2,11 +2,11 @@ import React from 'react';
 
 const Button = ({ color, click, text }) => {
     return (
-        <div>
-            <button style={{backgroundColor: color}} onClick={click} >
+        <>
+            <button className={color} onClick={click} >
                  {text} 
             </button>
-        </div>
+        </>
     );
 }
 

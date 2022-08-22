@@ -1,5 +1,6 @@
-.item-count{
+.container-item{
     display: flex;
-    flex-direction: row;
-    gap: 6px
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }

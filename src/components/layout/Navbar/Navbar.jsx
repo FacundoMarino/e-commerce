@@ -2,9 +2,13 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { BsCart } from "react-icons/bs";
 import './Navbar.css'
+import { useDataContext } from '../../../context/DataProvider/DataProvider';
 
 
 const Navbar = () => {
+
+    const { totalQuantity } = useDataContext()
+
     return (
         <nav>
             <ul className='navbar'>
@@ -26,6 +30,7 @@ const Navbar = () => {
                 <li>
                     <NavLink className='nav-link' to='/cart'>
                         <BsCart />
+                        {totalQuantity() || 0}
                     </NavLink>
                 </li>
             </ul>

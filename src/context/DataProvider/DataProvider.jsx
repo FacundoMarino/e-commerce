@@ -34,7 +34,7 @@ const DataProvider = ({ children }) => {
 
     const deleteProduct = (id) => {
 
-        setCart(cart.filter(element => element.id === id))
+        setCart(cart.filter(element => element.id !== id))
     }
 
     const totalPrice = () => {
@@ -42,6 +42,13 @@ const DataProvider = ({ children }) => {
         return cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
 
     }
+
+
+    const totalQuantity = () => {
+
+        return cart.reduce((prev, curr) => prev + curr.quantity, 0)
+    }
+
 
 
     return (
@@ -52,7 +59,8 @@ const DataProvider = ({ children }) => {
                 addCart,
                 cleanCart,
                 deleteProduct,
-                totalPrice
+                totalPrice,
+                totalQuantity
 
                 }}>
 
