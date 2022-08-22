@@ -20,10 +20,6 @@
     letter-spacing: 3px;
 }
 
-.description-card{
-    color:#D8EDF2;
-    font-size: 2rem;
-}
 
 .card-img{
     width: 20rem;
@@ -33,9 +29,11 @@
 }
 
 .offer{
-    color: blue;
+    font-size: 1.8rem;
+    color: #28c427;
 }
 
 .noOffer{
+    font-size: 1.8rem;
     color: yellow;
 }

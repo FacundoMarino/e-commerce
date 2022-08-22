@@ -1,6 +1,7 @@
 import React, {Fragment, useState} from 'react';
 import { useDataContext } from '../../context/DataProvider/DataProvider';
 import { getFirestore, addDoc, collection } from 'firebase/firestore';
+import Swal from 'sweetalert2';
 import './Form.css'
 
 const Form = () => {
@@ -30,8 +31,12 @@ const Form = () => {
         event.preventDefault()
         const db = getFirestore()
         const orderCollection = collection(db, 'orders');
-        addDoc(orderCollection, datos)
-        
+        addDoc(orderCollection, datos);
+        Swal.fire(
+            '¡Tu CheckOut se ha realizado correctamente!',
+            'Se ha enviado tu pedido',
+            'success'
+         )
     }
 
     return (

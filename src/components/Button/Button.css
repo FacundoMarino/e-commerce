@@ -1,0 +1,79 @@
+.delete {
+    min-width: auto;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid #d90429;
+    background: #d90429;
+  }
+  .delete:hover {
+    background: #fff;
+    color: #d90429
+  }
+
+  .sum {
+    min-width: auto;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #57cc99;
+    background: #57cc99;
+  }
+  .sum:hover {
+    background: #fff;
+    color: #57cc99
+  }
+
+  .rest {
+    min-width: auto;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #d90429;
+    background: #d90429;
+  }
+  .rest:hover {
+    background: #fff;
+    color: #d90429
+  }
+
+  .add {
+    min-width: auto;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #4433ff;
+    background: #4433ff;
+  }
+  .add:hover {
+    background: #fff;
+    color: #4433ff
+  }

@@ -27,10 +27,7 @@ const DataProvider = ({ children }) => {
     }
 
 
-    const cleanCart = () => {
-
-        setCart([])
-    }
+  
 
     const deleteProduct = (id) => {
 
@@ -56,8 +53,7 @@ const DataProvider = ({ children }) => {
             <dataContext.Provider value={{
 
                 cart,
-                addCart,
-                cleanCart,
+                addCart,                
                 deleteProduct,
                 totalPrice,
                 totalQuantity

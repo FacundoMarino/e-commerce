@@ -18,7 +18,7 @@ const ProductInCart = ({ data }) => {
         <>
         <div className='card'>
             
-            <Button color='button-delete'  text='Delete' click={deleteHandler} />
+            <Button color='delete' text='Delete' click={deleteHandler} />
             <h1 className='title'> {data.title} </h1>
             <img className='card-img' src={data.img} alt={data.title} />
             <p className='description-card'>${data.price}</p>
