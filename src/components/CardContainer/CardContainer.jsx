@@ -1,8 +1,9 @@
-    import React, {useEffect, useState} from 'react';
-import { Link } from 'react-router-dom'
-import { getDocs, getFirestore, collection, query, orderBy} from 'firebase/firestore';
-import Card from '../Card/Card';
 import './CardContainer.css'
+import { getDocs, getFirestore, collection, query, orderBy} from 'firebase/firestore';
+import { Link } from 'react-router-dom'
+import Card from '../Card/Card';
+import React, {useEffect, useState} from 'react';
+import Select from '../Select/Select';
 
 
 const CardContainer = () => {
@@ -31,22 +32,18 @@ const CardContainer = () => {
         
            }, [order])
 
-           console.log(data)
-
     return (
         <>
-            <select onChange={orderByHandler}>
-                <option value={1}>Mayor Precio</option>
-                <option value={2}>Menor Precio</option>
-            </select>
-
-            {
-            data.map(element => 
-            <Link to={`/${element.id}`}>
-                <Card className='container-cards' key={element.id} data={element} />
-            </Link>)
-            }
-    
+            <Select click={orderByHandler} />
+                <div>
+                    {
+                        data.map(element =>
+                            
+                        <Link key={element.id} to={`/${element.id}`}>
+                            <Card className='container-cards' key={element.id} data={element} />
+                        </Link>)
+                    }
+                </div>
         </>
     );
 }

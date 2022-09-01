@@ -1,3 +1,4 @@
+import { StrictMode } from 'react';
 import { BrowserRouter,Routes, Route } from 'react-router-dom'
 import './App.css';
 import CardContainer from './components/CardContainer/CardContainer';
@@ -11,20 +12,21 @@ import DataProvider from './context/DataProvider/DataProvider';
 function App() {
   return (
     <div className="App">
-      
-      <BrowserRouter>
-        <DataProvider>
-        <Navbar />
+      <StrictMode>
+        <BrowserRouter>
+          <DataProvider>
+          <Navbar />
 
-          <Routes>
-            <Route path='/' element={<CardContainer />} />
-            <Route path='/:id' element={<ProductDetail />} />
-            <Route path='/category/:categoryId' element={<CategoryContainer />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/form' element={<Form />} />
-          </Routes>
-        </DataProvider>
-      </BrowserRouter>
+            <Routes>
+              <Route path='/' element={<CardContainer />} />
+              <Route path='/:id' element={<ProductDetail />} />
+              <Route path='/category/:categoryId' element={<CategoryContainer />} />
+              <Route path='/cart' element={<Cart />} />
+              <Route path='/form' element={<Form />} />
+            </Routes>
+          </DataProvider>
+        </BrowserRouter>
+      </StrictMode>
     </div>
   );
 }

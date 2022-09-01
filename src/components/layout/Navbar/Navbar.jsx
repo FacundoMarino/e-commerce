@@ -1,8 +1,8 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { BsCart } from "react-icons/bs";
 import './Navbar.css'
+import { BsCart } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
 import { useDataContext } from '../../../context/DataProvider/DataProvider';
+import React from 'react';
 
 
 const Navbar = () => {

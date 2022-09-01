@@ -24,7 +24,7 @@ const CategoryContainer = () => {
 
             {
             data.map(element => 
-            <Link to={`/${element.id}`}> 
+            <Link key={element.id} to={`/${element.id}`}> 
                 <Card className='container-cards' key={element.id} data={element} />
             </Link>)
             }

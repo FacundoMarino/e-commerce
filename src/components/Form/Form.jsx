@@ -1,8 +1,8 @@
-import React, {Fragment, useState} from 'react';
-import { useDataContext } from '../../context/DataProvider/DataProvider';
-import { getFirestore, addDoc, collection } from 'firebase/firestore';
-import Swal from 'sweetalert2';
 import './Form.css'
+import { getFirestore, addDoc, collection } from 'firebase/firestore';
+import { useDataContext } from '../../context/DataProvider/DataProvider';
+import React, {Fragment, useState} from 'react';
+import Swal from 'sweetalert2';
 
 const Form = () => {
 

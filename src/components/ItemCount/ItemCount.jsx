@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import Button from '../Button/Button';
 import './ItemCount.css'
+import Button from '../Button/Button';
+import React, {useState} from 'react';
 
 const ItemCount = ({ click, stock }) => {
 
